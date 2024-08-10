@@ -4,7 +4,7 @@ Theme URI: #
 Version: 1.0.0
 Author: Himel
 Author URI: https://amhimeltech.com/
-Text Domain: HimelTech
+Text Domain: amhimeltech
 Requires at least: 6.4
 Tested up to: 6.6
 Requires PHP: 7.0
@@ -13,6 +13,3 @@ Tags: one-column, custom-colors, custom-menu, custom-logo, editor-style, feature
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 ============================== */
-body{
-  background-color:red;
-}

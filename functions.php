@@ -28,6 +28,27 @@ wp_enqueue_script( 'main',get_template_directory_uri().'/js/main.css ',array() ,
 
 }
 //link my_css_js_file_calling function
-add_action( 'wp_enqueue_scripts','my_css_js_file_calling' )
+add_action( 'wp_enqueue_scripts','my_css_js_file_calling' );
+
+// theme function for logo controll
+function my_logo_customizar_register($wp_customize){
+  //object oparetor (->) for collecting properties of object
+  $wp_customize->add_section('my_header_area',array('title'=>__('Header Area','amhimeltech'),'description'=>'If u interested to update your header area, you can do it here.'
+));// => for collecting properties of array
+
+$wp_customize->add_setting('my_logo',array(
+'default'=>get_bloginfo('templete_directory').'/img/logo.png',
+));
+
+$wp_customize->add_control(new WP_Customize_Image_Control($wp_customize,'my_logo',array(
+  'label'=> 'logo upload',
+  'description'=> 'If you interested to change or update your logo.you can do it.',
+  'setting'=> 'my_logo',
+  'section'=> 'my_header_area',
+)));
+
+}
+
+add_action('customize_register','my_logo_customizar_register');
 
 ?>
