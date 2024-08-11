@@ -30,8 +30,10 @@ wp_enqueue_script( 'main',get_template_directory_uri().'/js/main.css ',array() ,
 //link my_css_js_file_calling function
 add_action( 'wp_enqueue_scripts','my_css_js_file_calling' );
 
-// theme function for logo controll
+// theme function
 function my_logo_customizar_register($wp_customize){
+ 
+  //header area function
   //object oparetor (->) for collecting properties of object
   $wp_customize->add_section('my_header_area',array('title'=>__('Header Area','amhimeltech'),'description'=>'If u interested to update your header area, you can do it here.'
 ));// => for collecting properties of array
@@ -47,6 +49,27 @@ $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize,'my_logo
   'section'=> 'my_header_area',
 )));
 
+//menu position function
+$wp_customize->add_section('my_menu_option',array(
+  'title'=> __('Menu Possition Option','amhimeltech'),
+    'description'=> 'If you interested to change your menu position.you can do it.',
+
+));
+$wp_customize->add_setting('my_menu_position',array(
+'default'=>  'right_menu',
+));
+$wp_customize->add_control('my_menu_position',array(
+  'label'=> 'Menu Position',
+  'description'=> 'Select your menu position.',
+  'setting'=> 'my_menu_position',
+  'section'=> 'my_menu_option',
+  'type'=> 'radio',
+  'choices'=> array(
+    'left_menu'=>'Left Menu',
+    'right_menu'=>'Right Menu',
+    'center_menu'=>'Center Menu',
+  ),
+));
 }
 
 //google font enqueue

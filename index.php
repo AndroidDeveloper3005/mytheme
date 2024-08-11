@@ -14,8 +14,8 @@
   <?php wp_head();?>
 
 </head>
-<body <?php body_class(  );?> >
-  <div id="header_area">
+<body <?php body_class();?> >
+  <div id="header_area" class="<?php echo get_theme_mod( 'my_menu_position' ); ?>">
     <div class="container">
       <div class="row">
         <div class="col-md-3">
