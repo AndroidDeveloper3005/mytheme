@@ -15,13 +15,13 @@
 
 </head>
 <body <?php body_class();?> >
-  <div id="header_area" class="<?php echo get_theme_mod( 'my_menu_position' ); ?>">
+  <header id="header_area" class="<?php echo get_theme_mod( 'my_menu_position' ); ?>">
     <div class="container">
       <div class="row">
         <div class="col-md-3">
           <!--image wordpress-->
           <!--for static image set-->
-          <a href=""><img src=" <?php echo get_theme_mod( 'my_logo' ); ?> " alt=""></a>
+          <a href="<?php echo home_url(  ); ?>"><img src=" <?php echo get_theme_mod( 'my_logo' ); ?> " alt=""></a>
                   
           <!--for dynamic image set--> 
           <!--  <a href=""><img src=" <?php echo get_template_directory_uri(  ); ?>/img/logo.png" alt=""></a> -->
@@ -34,7 +34,20 @@
       </div>
     </div>
   </div>
-  
+</header>
+
+<!-- Body area -->
+<section id="body_area">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <?php the_content(  ); ?>
+      </div>
+    </div>
+  </div>
+</section>
+
+
 <?php wp_footer();?>
 
 </body>
